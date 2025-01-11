@@ -1,0 +1,13 @@
+﻿h1 {
+    color: #007bff;
+    text-align: center;
+}
+
+.table {
+    border: 1px solid #dee2e6;
+}
+
+    .table th {
+        background-color: #e9ecef;
+        color: #495057;
+    }

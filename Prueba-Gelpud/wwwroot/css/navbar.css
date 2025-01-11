@@ -1,0 +1,26 @@
+﻿/* Estilos personalizados para la barra de navegación */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745 !important;
+}
+
+    .navbar-brand:hover {
+        color: #218838 !important;
+    }
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #343a40 !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #007bff !important;
+        transform: scale(1.1);
+    }
+
+.navbar {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para la barra */
+}

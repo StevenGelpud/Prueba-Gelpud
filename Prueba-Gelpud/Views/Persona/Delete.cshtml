@@ -1,0 +1,48 @@
+﻿@model Prueba_Gelpud.Models.Persona
+
+@{
+    ViewData["Title"] = "Eliminar Persona";
+}
+
+<h2>Eliminar Persona</h2>
+
+<p>¿Estás seguro de que deseas eliminar la siguiente persona?</p>
+
+<div class="mb-3">
+    <label class="form-label">Nombres:</label>
+    <p>@Model.Nombres</p>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Apellidos:</label>
+    <p>@Model.Apellidos</p>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Identificación:</label>
+    <p>@Model.Identificacion</p>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Género:</label>
+    <p>@(Model.Genero == 'M' ? "Masculino" : "Femenino")</p>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Fecha de Nacimiento:</label>
+    <p>@Model.FechaNacimiento.ToString("dd/MM/yyyy")</p>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Estado:</label>
+    <p>@(Model.Activo ? "Activo" : "Inactivo")</p>
+</div>
+
+<form id="personaDeleteForm">
+    <input type="hidden" id="IdPersona" name="IdPersona" value="@Model.IdPersona" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="@Url.Action("Index", "Persona")" class="btn btn-secondary">Cancelar</a>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/scripts.js"></script>

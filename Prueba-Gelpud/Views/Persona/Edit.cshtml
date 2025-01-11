@@ -1,0 +1,74 @@
+﻿@model Prueba_Gelpud.Models.Persona
+
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<h2>Editar Persona</h2>
+
+<!-- Formulario de Edición -->
+<form id="personaEditForm">
+    <input type="hidden" id="IdPersona" name="IdPersona" value="@Model.IdPersona" />
+
+    <div class="mb-3">
+        <label for="Nombres" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="Nombres" name="Nombres" value="@Model.Nombres" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Apellidos" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="Apellidos" name="Apellidos" value="@Model.Apellidos" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Identificacion" class="form-label">Identificación</label>
+        <input type="text" class="form-control" id="Identificacion" name="Identificacion" value="@Model.Identificacion" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Genero" class="form-label">Género</label>
+        <select id="Genero" name="Genero" class="form-select">
+            @if (Model.Genero == 'M')
+            {
+                    <option value="M" selected>Masculino</option>
+                    <option value="F">Femenino</option>
+            }
+            else
+            {
+                    <option value="M">Masculino</option>
+                    <option value="F" selected>Femenino</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="@Model.FechaNacimiento.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Contraseña" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="Contraseña" name="Contraseña" value="@Model.Contraseña" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Activo" class="form-label">Estado</label>
+        <select id="Activo" name="Activo" class="form-select">
+            @if (Model.Activo)
+            {
+                    <option value="true" selected>Activo</option>
+                    <option value="false">Inactivo</option>
+            }
+            else
+            {
+                    <option value="true">Activo</option>
+                    <option value="false" selected>Inactivo</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/scripts.js"></script>
